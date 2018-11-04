@@ -1,3 +1,4 @@
 import './style.scss';
+ import _ from 'lodash';
 const a = [1,2,3];
-console.log([...a,4,5,6]);
+console.log(_.concat(a,[4,5,678]) );

@@ -9,7 +9,7 @@ module.exports = {
         page2: './src/page-2/app.js'
     },
     output: {
-        filename: 'js/[name]-[hash:5].js',
+        filename: './js/[name]-[hash:5].js',
         path: path.resolve(__dirname, 'dist')
     },
     // devtool: 'inline-source-map',
@@ -22,13 +22,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'page-1.html',
             template: 'src/page-1/page-1.html',
-            chunks: ['page1'],
+            chunks: ['page1','commons'],
             inlineSource: '.(js|css)$'
         }),
         new HtmlWebpackPlugin({
             filename: 'page-2.html',
             template: 'src/page-2/page-2.html',
-            chunks: ['page2'],
+            chunks: ['page2','commons'],
             inlineSource: '.(js|css)$'
         }),
 
