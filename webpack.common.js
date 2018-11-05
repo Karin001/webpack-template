@@ -40,7 +40,7 @@ module.exports = {
     ],
     module: {
         rules: [
-           
+         
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
@@ -55,13 +55,20 @@ module.exports = {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'url-loader',
                         options: {
-                            outputPath: './assets'
+                            limit: 1024,
+                            name: '[hash:8].[ext]',
+                            useRelativePath: false,
+                            outputPath: function(fileName){
+                                return 'assets/images/'+fileName
+                            }
                         }
-                    }
+                    },
                 ]
-            }
+            },
+           
+   
         ]
     },
 };
