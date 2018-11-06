@@ -11,6 +11,7 @@ module.exports = merge(common, {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
+                    publicPath: '../',
                     use: ['css-loader', 'postcss-loader', 'sass-loader']
                 })
             }
