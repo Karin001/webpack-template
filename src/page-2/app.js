@@ -1,4 +1,4 @@
-import './style.scss'
+ import './style.scss'
  //import _ from 'lodash'
  import {sayHello} from '../utils/say'
  import $ from 'jquery'
